@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Agency - Growth & Innovation</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Dentro do <head> do index.html -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">WB ROCKET</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle">☰</button>
+            <button class="btn btn-primary">Book a Call</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Where Stunning Design Meets Flawless Functionality</h1>
+            <p class="hero-subtitle">We create unforgettable websites, brands & visuals for bold visionaries who want to grow and innovate.</p>
+            <button class="btn btn-primary btn-large">Book a Call</button>
+            <div class="badge">TOP 100 DESIGN STUDIOS IN USA</div>
+        </div>
+    </section>
+
+  <!-- Divisão Diagonal com Curva -->
+  <div class="diagonal-curved-divider"></div>
+
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Unforgettable. Websites. Brands & Visuals for Bold Visionaries.</h2>
+                    <p class="section-text">Our team combines creativity with technical expertise to deliver solutions that drive growth, energy, innovation and confidence. We believe in the power of design to transform businesses and create meaningful connections.</p>
+                    <button class="btn btn-secondary">More About Us</button>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">72</div>
+                        <div class="stat-label">Active Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Brands Transformed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years of Dedicated Work</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wavy-divider"></div>
+    </section>
+
+
+  
+
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title text-center">Services We Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3 class="service-title">UI/UX Design</h3>
+                    <p class="service-description">User-centered design that creates intuitive and engaging experiences.</p>
+                    <ul class="service-features">
+                        <li>User Research & Testing</li>
+                        <li>Wireframing & Prototyping</li>
+                        <li>Visual Design & Branding</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Brand Design</h3>
+                    <p class="service-description">Strategic branding that builds trust and recognition.</p>
+                    <ul class="service-features">
+                        <li>Logo & Identity Design</li>
+                        <li>Brand Guidelines</li>
+                        <li>Marketing Materials</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Webflow Development</h3>
+                    <p class="service-description">Custom websites built with modern tools and best practices.</p>
+                    <ul class="service-features">
+                        <li>Responsive Design</li>
+                        <li>CMS Integration</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">No-Code Development</h3>
+                    <p class="service-description">Rapid prototyping and development without traditional coding.</p>
+                    <ul class="service-features">
+                        <li>MVP Development</li>
+                        <li>Automation & Workflows</li>
+                        <li>Integration Solutions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="zigzag-divider"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title text-center">Ready to Start Your Project?</h2>
+            <p class="section-text text-center">Let's discuss how we can help you achieve your goals with innovative design and development solutions.</p>
+            <button class="btn btn-primary btn-large">Book a Free Call</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 WB ROCKET. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('show');
+            });
+            
+            // Close menu when clicking on a link
+            const navLinksItems = document.querySelectorAll('.nav-links a');
+            navLinksItems.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('show');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
