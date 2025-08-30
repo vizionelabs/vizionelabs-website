@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Vizione</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <img src="images/vizione_logo_cabecalho.png" alt="VIZIONE" class="logo-image">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+            <button class="mobile-menu-toggle">☰</button>
+            <button class="btn btn-primary">Agendar Consultoria</button>
+        </nav>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Pronto para Transformar a Sua Presença Digital?</h1>
+            <p class="page-subtitle">Fale conosco. Queremos entender os seus objetivos e montar a estratégia perfeita para o seu negócio decolar.</p>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" alt="WhatsApp" class="contact-logo">
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>(11) 97428-1021</p>
+                    <p>Respostas rápidas e diretas</p>
+                    <button class="btn btn-primary" id="whatsappBtn">Falar no WhatsApp</button>
+                    <!-- Backup direct link for WhatsApp -->
+                    <a href="https://wa.me/5511974281021?text=Olá! Gostaria de saber mais sobre os serviços da Vizione." 
+                       target="_blank" 
+                       style="display: none;" 
+                       id="whatsappLink">WhatsApp Direct Link</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>E-mail</h3>
+                    <p>comercial@vizione.com.br</p>
+                    <p>Respondemos em até 24 horas</p>
+                    <button class="btn btn-primary" id="emailBtn">Enviar E-mail</button>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📝</div>
+                    <h3>Formulário</h3>
+                    <p>Preencha abaixo</p>
+                    <p>Conte-nos sobre seu projeto</p>
+                    <button class="btn btn-primary" id="formBtn">Ver Formulário</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2 class="section-title">Formulário de Contato</h2>
+                    <p class="section-text">Preencha os campos abaixo e entraremos em contato o mais rápido possível.</p>
+                </div>
+                <!-- Hidden form for Netlify -->
+                <form name="contact" method="POST" data-netlify="true" style="display: none;">
+                    <input type="text" name="name" />
+                    <input type="email" name="email" />
+                    <input type="tel" name="phone" />
+                    <textarea name="message"></textarea>
+                </form>
+                
+                <form class="contact-form" name="contact" method="POST" data-netlify="true" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome *</label>
+                        <input type="text" id="name" name="name" required placeholder="Seu nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Conte-nos sobre seu projeto e objetivos..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
+                            <span class="btn-text">Enviar Mensagem</span>
+                            <span class="btn-loading" style="display: none;">Enviando...</span>
+                        </button>
+                    </div>
+                    <div class="form-feedback" id="formFeedback" style="display: none;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title text-center">Pronto para Começar?</h2>
+            <p class="section-text text-center">Agende uma consultoria gratuita para discutir seu projeto e ver como podemos ajudar.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary btn-large">Agendar Consultoria Gratuita</button>
+                <button class="btn btn-secondary btn-large">Baixar Nosso Portfólio</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 VIZIONE. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

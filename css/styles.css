@@ -43,6 +43,15 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     color: #8DC63F; /* Primary green for logo */
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: auto;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -66,38 +75,78 @@ body {
     padding: 12px 24px;
     border: none;
     border-radius: 50px;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
 }
 
 .btn-primary {
-    background-color: #8DC63F;
+    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
     color: #FFFFFF;
     border: none;
-    padding: 12px 24px;
-    border-radius: 9999px; /* ← Redondo */
-    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: #ADFF3B; /* Lighter green on hover */
+    background: linear-gradient(135deg, #F7931E 0%, #FF6B35 100%);
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
 }
 
 .btn-secondary {
-    background-color: transparent;
-    color: #8DC63F; /* Primary green text */
-    border: 2px solid #8DC63F; /* Primary green border */
+    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
 
 .btn-secondary:hover {
-    background-color: #8DC63F; /* Primary green background on hover */
-    color: #FFFFFF; /* White text on hover */
+    background: linear-gradient(135deg, #F7931E 0%, #FF6B35 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+/* Contract notice for main service buttons */
+.btn-contract-notice {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.btn-contract-notice::after {
+    content: '*Contrato mínimo de 8 meses.';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    color: #666;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    white-space: nowrap;
+}
+
+/* Adjust service pricing for buttons with contract notice */
+.service-pricing .btn-contract-notice {
+    margin-bottom: 2.5rem;
+}
+
+/* Adjust contract notice for featured cards */
+.service-cta-bottom .btn-contract-notice {
+    margin-bottom: 2.5rem;
 }
 
 .btn-large {
@@ -156,9 +205,12 @@ body {
 
 .hero-title {
     font-size: 3.5rem;
-    font-weight: 700;
+    font-weight: 800;
+    font-family: 'Poppins', 'Montserrat', sans-serif;
     margin-bottom: 1.5rem;
     color: #FFFFFF; /* White text */
+    letter-spacing: -0.03em;
+    line-height: 1.1;
 }
 
 .hero-subtitle {
@@ -190,8 +242,11 @@ section {
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
+    font-family: 'Poppins', 'Montserrat', sans-serif;
     margin-bottom: 1.5rem;
     color: #000000; /* Black text */
+    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
 .section-text {
@@ -206,27 +261,7 @@ section {
 }
 
 
-/* Divisão Diagonal com Curva */
-.diagonal-curved-divider {
-    height: 120px;
-    background: #8DC63F; /* Sua cor verde principal */
-    position: relative;
-    overflow: hidden;
-    transform: skewY(-4deg); /* Diagonal suave */
-    transform-origin: bottom left;
-}
 
-.diagonal-curved-divider::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000000; /* Fundo preto da próxima seção */
-    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-    transform: translateY(-50%) scaleY(1.5);
-}
 
 
 
@@ -469,9 +504,12 @@ section {
 
 .page-title {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 800;
+    font-family: 'Poppins', 'Montserrat', sans-serif;
     margin-bottom: 1rem;
     color: #FFFFFF; /* White text */
+    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
 .page-subtitle {
@@ -494,6 +532,18 @@ section {
     gap: 2rem;
 }
 
+/* Featured cards take more space */
+.service-detail-card.featured {
+    grid-column: span 2;
+}
+
+/* Responsive adjustments for featured cards */
+@media (max-width: 1200px) {
+    .service-detail-card.featured {
+        grid-column: span 1;
+    }
+}
+
 .service-detail-card {
     background-color: #f8f9fa;
     padding: 2.5rem;
@@ -509,22 +559,94 @@ section {
     box-shadow: 0 8px 25px rgba(141, 198, 63, 0.15);
 }
 
+/* Featured cards styling */
+.service-detail-card.featured {
+    border: 3px solid #8DC63F;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-detail-card.featured::before {
+    content: '⭐ DESTAQUE';
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    background: #8DC63F;
+    color: white;
+    padding: 5px 40px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transform: rotate(45deg);
+    z-index: 1;
+}
+
+.service-detail-card.featured:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(141, 198, 63, 0.25);
+}
+
 .service-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Platform logos in service icons */
+.platform-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.platform-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Inline logos in service descriptions */
+.inline-logo {
+    height: 18px;
+    width: auto;
+    vertical-align: middle;
+    margin-left: 6px;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    transition: transform 0.2s ease;
+}
+
+.inline-logo:hover {
+    transform: scale(1.1);
 }
 
 .service-detail-title {
     font-size: 1.8rem;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: 'Poppins', 'Montserrat', sans-serif;
     margin-bottom: 1rem;
     color: #000000; /* Black text */
+    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
 .service-detail-description {
     color: #587234; /* Darker green */
     margin-bottom: 1.5rem;
     line-height: 1.6;
+}
+
+.service-detail-subtitle {
+    color: #8DC63F; /* Primary green */
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-style: italic;
 }
 
 .service-features-detailed h3 {
@@ -536,6 +658,7 @@ section {
 .service-features-detailed ul {
     list-style: none;
     margin-bottom: 2rem;
+    flex-grow: 1;
 }
 
 .service-features-detailed li {
@@ -553,6 +676,14 @@ section {
     left: 0;
 }
 
+.service-features-detailed li strong {
+    color: #000000; /* Black for emphasis */
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
 .service-pricing {
     display: flex;
     justify-content: space-between;
@@ -565,6 +696,101 @@ section {
     font-size: 1.2rem;
     font-weight: 600;
     color: #8DC63F; /* Primary green */
+}
+
+/* New pricing layout for featured cards */
+.service-pricing-top {
+    text-align: center;
+    margin: 1.5rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 16px;
+    border: 2px solid #FF6B35;
+    box-shadow: 
+        0 8px 25px rgba(255, 107, 53, 0.15),
+        0 4px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Smaller padding for non-featured cards */
+.service-detail-card:not(.featured) .service-pricing-top {
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+/* Featured cards get the top line */
+.service-detail-card.featured .service-pricing-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+}
+
+.price-old {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #888888; /* Slightly darker gray for better contrast */
+    text-decoration: line-through;
+    margin-bottom: 0.2em;
+    opacity: 0.8;
+    position: relative;
+}
+
+.price-old::after {
+    content: '';
+    position: sticky;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #888888 20%, #888888 80%, transparent 100%);
+    transform: translateY(-50%);
+}
+
+.price-new {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    color: #FF6B35; /* Orange color like buttons */
+    text-shadow: 
+        0 4px 8px rgba(255, 107, 53, 0.4), /* Orange shadow for depth */
+        0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle black shadow */
+    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    display: inline-block;
+}
+
+/* Smaller price size for non-featured cards */
+.service-detail-card:not(.featured) .price-new {
+    font-size: 2rem;
+}
+
+/* Fallback for browsers that don't support background-clip */
+.price-new::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    color: #FF6B35;
+    text-shadow: 
+        0 4px 8px rgba(255, 107, 53, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* CTA button at bottom for featured cards */
+.service-cta-bottom {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
 }
 
 /* Process Section */
@@ -820,6 +1046,15 @@ section {
 .contact-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 .contact-card h3 {
@@ -830,6 +1065,14 @@ section {
 .contact-card p {
     color: #587234; /* Darker green */
     line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.contact-card .btn {
+    margin-top: auto;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
 }
 
 /* Contact Form Section */
@@ -903,6 +1146,48 @@ section {
 .checkbox-label input[type="checkbox"] {
     width: auto;
     margin: 0;
+}
+
+/* Form Feedback Styles */
+.form-feedback {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-feedback.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-feedback.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Loading State for Submit Button */
+.btn-loading {
+    display: none;
+}
+
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Form Validation Styles */
+.form-group input:invalid,
+.form-group textarea:invalid {
+    border-color: #dc3545;
+}
+
+.form-group input:valid,
+.form-group textarea:valid {
+    border-color: #28a745;
 }
 
 /* FAQ Section */
