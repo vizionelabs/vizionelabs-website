@@ -157,19 +157,6 @@ body {
 /* Hero Section */
 .hero {
     background-color: #000000; /* Black background */
-    background-image: 
-        linear-gradient(45deg, rgba(141, 198, 63, 0.1) 25%, transparent 25%), 
-        linear-gradient(-45deg, rgba(141, 198, 63, 0.1) 25%, transparent 25%), 
-        linear-gradient(45deg, transparent 75%, rgba(141, 198, 63, 0.1) 75%), 
-        linear-gradient(-45deg, transparent 75%, rgba(141, 198, 63, 0.1) 75%);
-    background-size: 20px 20px;
-    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-    /* Uncomment the line below and add your image to images/hero-bg.jpg */
-    /* background-image: url('images/hero-bg.jpg'); */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Parallax effect */
     color: #FFFFFF; /* White text */
     padding: 120px 0 80px;
     text-align: center;
@@ -201,6 +188,40 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* Hero Background Logo */
+.hero-background-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 1; /* Increased opacity for better visibility */
+    pointer-events: none; /* Prevents interaction with the background logo */
+}
+
+.hero-logo-bg {
+    width: 800px; /* Larger size for better background effect */
+    height: auto;
+    max-width: 90vw; /* Responsive sizing */
+       opacity: 1; /* Increased opacity for better visibility */
+    transition: opacity 0.3s ease;
+}
+
+/* Responsive adjustments for the background logo */
+@media (max-width: 768px) {
+    .hero-logo-bg {
+        width: 500px;
+        opacity: 1; /* More visible on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logo-bg {
+        width: 350px;
+        opacity:1; /* More visible on small screens */
+    }
 }
 
 .hero-title {
