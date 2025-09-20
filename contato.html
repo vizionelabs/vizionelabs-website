@@ -22,7 +22,7 @@
                 <li><a href="contato.html" class="active">Contato</a></li>
             </ul>
             <button class="mobile-menu-toggle">☰</button>
-            <button class="btn btn-primary">Agendar Consultoria</button>
+            <a href="https://wa.me/5511974281021?text=Olá! Gostaria de agendar uma consultoria gratuita com a Vizione." class="btn btn-primary" target="_blank" rel="noopener noreferrer">Agendar Consultoria</a>
         </nav>
     </header>
 
@@ -49,7 +49,7 @@
                     <h3>WhatsApp</h3>
                     <p>(11) 97428-1021</p>
                     <p>Respostas rápidas e diretas</p>
-                    <button class="btn btn-primary" id="whatsappBtn">Falar no WhatsApp</button>
+                    <a href="https://wa.me/5511974281021?text=Olá! Gostaria de saber mais sobre os serviços da Vizione." class="btn btn-primary" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
                     <!-- Backup direct link for WhatsApp -->
                     <a href="https://wa.me/5511974281021?text=Olá! Gostaria de saber mais sobre os serviços da Vizione." 
                        target="_blank" 
@@ -61,81 +61,12 @@
                     <h3>E-mail</h3>
                     <p>comercial@vizione.com.br</p>
                     <p>Respondemos em até 24 horas</p>
-                    <button class="btn btn-primary" id="emailBtn">Enviar E-mail</button>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">📝</div>
-                    <h3>Formulário</h3>
-                    <p>Preencha abaixo</p>
-                    <p>Conte-nos sobre seu projeto</p>
-                    <button class="btn btn-primary" id="formBtn">Ver Formulário</button>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=comercial@vizione.com.br&su=Interesse nos serviços da Vizione&body=Olá! Gostaria de saber mais sobre os serviços da Vizione." class="btn btn-primary" target="_blank" rel="noopener noreferrer">Enviar E-mail</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section class="contact-form-section">
-        <div class="container">
-            <div class="form-container">
-                <div class="form-header">
-                    <h2 class="section-title">Formulário de Contato</h2>
-                    <p class="section-text">Preencha os campos abaixo e entraremos em contato o mais rápido possível.</p>
-                </div>
-                <!-- Hidden form for Netlify -->
-                <form name="contact" method="POST" data-netlify="true" style="display: none;">
-                    <input type="text" name="name" />
-                    <input type="email" name="email" />
-                    <input type="tel" name="phone" />
-                    <select name="service">
-                        <option value="branding">Branding & Identidade Visual</option>
-                        <option value="web">Desenvolvimento Web</option>
-                        <option value="social">Gestão de Redes Sociais</option>
-                        <option value="marketing">Marketing Digital</option>
-                        <option value="consultoria">Consultoria</option>
-                    </select>
-                    <textarea name="message"></textarea>
-                </form>
-                
-                <form class="contact-form" name="contact" method="POST" data-netlify="true" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Nome *</label>
-                        <input type="text" id="name" name="name" required placeholder="Seu nome completo">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail *</label>
-                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Telefone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999">
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Serviço de Interesse</label>
-                        <select id="service" name="service">
-                            <option value="">Selecione um serviço</option>
-                            <option value="branding">Branding & Identidade Visual</option>
-                            <option value="web">Desenvolvimento Web</option>
-                            <option value="social">Gestão de Redes Sociais</option>
-                            <option value="marketing">Marketing Digital</option>
-                            <option value="consultoria">Consultoria</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensagem *</label>
-                        <textarea id="message" name="message" rows="6" placeholder="Conte-nos sobre seu projeto e objetivos..." required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
-                            <span class="btn-text">Enviar Mensagem</span>
-                            <span class="btn-loading" style="display: none;">Enviando...</span>
-                        </button>
-                    </div>
-                    <div class="form-feedback" id="formFeedback" style="display: none;"></div>
-                </form>
-            </div>
-        </div>
-    </section>
 
 
 
@@ -145,8 +76,7 @@
             <h2 class="section-title text-center">Pronto para Começar?</h2>
             <p class="section-text text-center">Agende uma consultoria gratuita para discutir seu projeto e ver como podemos ajudar.</p>
             <div class="cta-buttons">
-                <button class="btn btn-primary btn-large">Agendar Consultoria Gratuita</button>
-                <button class="btn btn-secondary btn-large">Baixar Nosso Portfólio</button>
+                <a href="https://wa.me/5511974281021?text=Olá! Gostaria de agendar uma consultoria gratuita com a Vizione." class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">Agendar Consultoria Gratuita</a>
             </div>
         </div>
     </section>
@@ -154,9 +84,40 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 VIZIONE. Todos os direitos reservados.</p>
+            <p>&copy; 2025 VIZIONE. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="whatsapp-widget">
+        <a href="https://wa.me/5511974281021?text=Olá! Gostaria de falar com a Vizione." target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Cookie Notice -->
+    <div class="cookie-notice" id="cookieNotice">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p>🍪 Este site utiliza cookies para melhorar sua experiência de navegação. Ao continuar navegando, você concorda com nossa política de cookies.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Aceitar</button>
+                <button class="cookie-btn cookie-decline" onclick="declineCookies()">Recusar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 
     <!-- JavaScript -->
     <script src="js/script.js"></script>

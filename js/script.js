@@ -140,4 +140,48 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Cookie Notice Functionality
+    const cookieNotice = document.getElementById('cookieNotice');
+    
+    // Check if user has already made a choice about cookies
+    if (!localStorage.getItem('cookieChoice')) {
+        // Show cookie notice after 2 seconds
+        setTimeout(() => {
+            if (cookieNotice) {
+                cookieNotice.classList.add('show');
+            }
+        }, 2000);
+    }
 });
+
+// Cookie functions (global scope)
+function acceptCookies() {
+    localStorage.setItem('cookieChoice', 'accepted');
+    const cookieNotice = document.getElementById('cookieNotice');
+    if (cookieNotice) {
+        cookieNotice.classList.remove('show');
+    }
+    
+    // Enable Google Analytics
+    if (typeof gtag !== 'undefined') {
+        gtag('consent', 'update', {
+            'analytics_storage': 'granted'
+        });
+    }
+}
+
+function declineCookies() {
+    localStorage.setItem('cookieChoice', 'declined');
+    const cookieNotice = document.getElementById('cookieNotice');
+    if (cookieNotice) {
+        cookieNotice.classList.remove('show');
+    }
+    
+    // Disable Google Analytics
+    if (typeof gtag !== 'undefined') {
+        gtag('consent', 'update', {
+            'analytics_storage': 'denied'
+        });
+    }
+}
