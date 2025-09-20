@@ -64,7 +64,28 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('WhatsApp button clicked!'); // Debug log
             
             const phone = '5511974281021'; // Brazil country code (55) + phone number
-            const message = 'Olá! Gostaria de saber mais sobre os serviços da Vizione.';
+            
+            // Check if form has data to include in message
+            const nameField = document.getElementById('name');
+            const serviceField = document.getElementById('service');
+            const messageField = document.getElementById('message');
+            
+            let message = 'Olá! Gostaria de saber mais sobre os serviços da Vizione.';
+            
+            // If form has data, include it in the message
+            if (nameField && nameField.value.trim()) {
+                message += `\n\nNome: ${nameField.value.trim()}`;
+            }
+            
+            if (serviceField && serviceField.value) {
+                const serviceText = serviceField.options[serviceField.selectedIndex].text;
+                message += `\nServiço de interesse: ${serviceText}`;
+            }
+            
+            if (messageField && messageField.value.trim()) {
+                message += `\nMensagem: ${messageField.value.trim()}`;
+            }
+            
             const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
             
             console.log('WhatsApp URL:', whatsappUrl); // Debug log

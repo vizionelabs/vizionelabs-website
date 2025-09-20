@@ -631,6 +631,142 @@ section {
         transition: background-color 0.3s ease;
     }
     
+    /* Mobile pricing table adjustments */
+    .pricing-table {
+        display: block;
+    }
+    
+    .pricing-table-row {
+        display: block;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        padding: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+    }
+    
+    .pricing-table-row.header {
+        display: none; /* Hide header on mobile */
+    }
+    
+    .service-column {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        color: #FFFFFF;
+        font-weight: 700;
+    }
+    
+    /* Create a flex container for price and discount */
+    .pricing-table-row {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .pricing-mobile-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .market-price-column {
+        display: none; /* Hide market prices on mobile */
+    }
+    
+    .promo-price-column {
+        text-align: center;
+        flex: 1;
+        min-width: 120px;
+        order: 1;
+    }
+    
+    .promo-price {
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+    
+    .discount-column {
+        text-align: center;
+        flex: 1;
+        min-width: 100px;
+        order: 2;
+    }
+    
+    .discount-badge {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        white-space: nowrap;
+        max-width: 100%;
+        overflow: visible;
+    }
+    
+    /* Medium mobile screens - allow wrapping */
+    @media (max-width: 600px) {
+        .pricing-mobile-row {
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        .promo-price-column {
+            min-width: 140px;
+        }
+        
+        .discount-column {
+            min-width: 120px;
+        }
+    }
+    
+    /* Small mobile screens - stack vertically */
+    @media (max-width: 480px) {
+        .pricing-mobile-row {
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
+        .promo-price-column,
+        .discount-column {
+            flex: none;
+            min-width: auto;
+            width: 100%;
+        }
+        
+        .promo-price {
+            font-size: 1.3rem;
+        }
+        
+        .discount-badge {
+            font-size: 0.85rem;
+            padding: 0.3rem 0.6rem;
+        }
+    }
+    
+    /* Add mobile-specific labels */
+    .promo-price-column::before {
+        content: "Preço Promocional";
+        display: block;
+        color: #FF6B35;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .discount-column::before {
+        content: "Desconto";
+        display: block;
+        color: #8DC63F;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
 /* Estilos para HOVER (passar o mouse) */
 /* Hover State */
 .nav-links a:hover {
@@ -642,10 +778,10 @@ section {
 
 /* Active State */
 .nav-links a.active {
-    background-color: #8DC63F;
-    color: #FFFFFF;
+    background-color: #c7c7c7;
+    color: #000000; /* Changed to black for better readability */
     box-shadow: 0 0 12px rgba(141, 198, 63, 0.8);
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+    text-shadow: none; /* Removed white text shadow since text is now black */
     font-weight: 600;
 }
     
@@ -757,6 +893,115 @@ section {
     z-index: 2;
 }
 
+/* Pricing Overview Section */
+.pricing-overview {
+    padding: 80px 0;
+    background-color: #0b0b0b; /* Dark background */
+    background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+    background-size: 4px 4px;
+}
+
+.pricing-table-card {
+    background-color: #333333; /* Dark card background */
+    background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.08) 1px, transparent 0);
+    background-size: 4px 4px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.pricing-table-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.pricing-table-header h3 {
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-table-header p {
+    color: #CCCCCC;
+    font-size: 1rem;
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.pricing-table-row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: center;
+}
+
+.pricing-table-row.header {
+    background-color: rgba(141, 198, 63, 0.1);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #8DC63F;
+}
+
+.pricing-table-row:last-child {
+    border-bottom: none;
+}
+
+.service-column {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.market-price-column {
+    text-align: center;
+}
+
+.market-price {
+    color: #CCCCCC;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+
+.promo-price-column {
+    text-align: center;
+}
+
+.promo-price {
+    color: #FF6B35;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.discount-column {
+    text-align: center;
+}
+
+.discount-badge {
+    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+    color: #FFFFFF;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.pricing-table-footer {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* Services Page Specific Styles */
 .services-detailed {
     padding: 80px 0;
@@ -856,6 +1101,29 @@ section {
         margin-left: 3px;
         margin-right: 1px;
     }
+    
+    /* Mobile package services adjustments */
+    .package-service-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 0.8rem;
+    }
+    
+    .service-name {
+        font-size: 0.9rem;
+        color: #CCCCCC;
+    }
+    
+    .service-price {
+        font-size: 1rem;
+        color: #CCCCCC;
+        font-weight: 700;
+    }
+    
+    .package-total-label {
+        font-size: 0.8rem;
+    }
 }
 
 /* Extra small mobile devices */
@@ -923,6 +1191,27 @@ section {
         margin-left: 3px;
         margin-right: 6px; /* Increased margin to prevent cutoff */
     }
+    
+    /* Extra small mobile package services adjustments */
+    .package-service-item {
+        padding: 0.6rem;
+        gap: 0.3rem;
+    }
+    
+    .service-name {
+        font-size: 0.8rem;
+        color: #CCCCCC;
+    }
+    
+    .service-price {
+        font-size: 0.9rem;
+        color: #CCCCCC;
+        font-weight: 700;
+    }
+    
+    .package-total-label {
+        font-size: 0.7rem;
+    }
 }
 
 .service-detail-card {
@@ -952,8 +1241,19 @@ section {
     text-shadow: 0 0 10px rgba(141, 198, 63, 0.6), 0 0 20px rgba(141, 198, 63, 0.4); /* Green glow effect */
 }
 
-/* Featured cards styling */
-.service-detail-card.featured {
+/* Featured cards styling - Only VIP card gets green border and DESTAQUE tag */
+.service-detail-card.featured:not(.vip-package) {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+/* VIP package keeps green border and DESTAQUE tag */
+.vip-package {
     border: 3px solid #8DC63F;
     background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
     position: relative;
@@ -963,7 +1263,7 @@ section {
     height: fit-content;
 }
 
-.service-detail-card.featured::before {
+.vip-package::before {
     content: '⭐ DESTAQUE';
     position: absolute;
     top: 15px;
@@ -998,6 +1298,17 @@ section {
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
     transition: transform 0.3s ease;
+}
+
+/* Special styling for Meta logo - make text white while keeping infinity symbol blue */
+.meta-logo-white {
+    filter: 
+        drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1))
+        brightness(0) 
+        invert(1) 
+        hue-rotate(180deg) 
+        saturate(1.5) 
+        brightness(1.2);
 }
 
 .platform-logo:hover {
@@ -1215,6 +1526,38 @@ section {
     display: inline-block;
 }
 
+/* Small text for price units like "mês", "pacote", "projeto" */
+.price-new .price-unit {
+    font-size: 0.6em;
+    font-weight: 500;
+    vertical-align: baseline;
+    color: #FF6B35; /* Keep orange color */
+    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 
+        0 2px 4px rgba(255, 107, 53, 0.3),
+        0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Price continuation - for values after promotional period */
+.price-continuation {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FF6B35; /* Orange color */
+    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 
+        0 2px 4px rgba(255, 107, 53, 0.3),
+        0 1px 2px rgba(0, 0, 0, 0.1);
+    margin-top: 0.5rem;
+    text-align: center;
+    position: relative;
+}
+
 /* Smaller price size for non-featured cards */
 .service-detail-card:not(.featured) .price-new {
     font-size: 2rem;
@@ -1239,6 +1582,308 @@ section {
     padding-top: 1.5rem;
     border-top: 1px solid #e0e0e0;
     text-align: center;
+}
+
+/* Package Services List Styles */
+.package-services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.package-service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.package-service-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: #8DC63F;
+    transform: translateX(5px);
+}
+
+.service-name {
+    color: #CCCCCC;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.service-price {
+    color: #CCCCCC;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.package-total-label {
+    color: #CCCCCC;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.gift-icon {
+    font-size: 3rem;
+    display: block;
+    text-align: center;
+}
+
+.content-icon {
+    font-size: 3rem;
+    display: block;
+    text-align: center;
+}
+
+.identity-icon {
+    font-size: 3rem;
+    display: block;
+    text-align: center;
+}
+
+.vip-icon {
+    font-size: 3rem;
+    display: block;
+    text-align: center;
+}
+
+
+.vip-pricing {
+    background: linear-gradient(135deg, #444444 0%, #3a3a3a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.promotional-badge {
+    background: linear-gradient(135deg, #8DC63F 0%, #587234 100%);
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    display: block;
+    text-align: center;
+    animation: pulse 2s infinite;
+    box-shadow: 0 4px 15px rgba(141, 198, 63, 0.4);
+    position: relative;
+}
+
+.promotional-badge::before {
+    content: '🎉';
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.price-old {
+    color: #CCCCCC;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: line-through;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+.price-new {
+    color: #FF6B35;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #FF6B35, #F7931E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.promotional-note {
+    color: #FF6B35;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    background: rgba(255, 107, 53, 0.1);
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid #FF6B35;
+}
+
+.contract-notice {
+    background-color: rgba(255, 215, 0, 0.1);
+    border: 1px solid #FFD700;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.contract-notice p {
+    color: #FFD700;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* No Commitment Badge Styles */
+.no-commitment-notice {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.no-commitment-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #2C2C2C;
+    color: #CCCCCC;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #404040;
+}
+
+.badge-icon {
+    font-size: 1.1rem;
+}
+
+.badge-text {
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+
+/* Responsive adjustments for badges */
+@media (max-width: 768px) {
+    .no-commitment-badge {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
+    
+    .badge-text {
+        font-size: 0.75rem;
+    }
+}
+
+/* Gift Notice Styles */
+.gift-notice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #2C2C2C;
+    color: #8DC63F;
+    padding: 0.8rem 1.2rem;
+    border-radius: 20px;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border: 1px solid #404040;
+}
+
+.gift-icon {
+    font-size: 1.2rem;
+}
+
+.gift-text {
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+
+/* Gift Price in Service List */
+.gift-price {
+    background: linear-gradient(135deg, #8DC63F, #6BA83A) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: 800 !important;
+    font-size: 1rem !important;
+    text-shadow: none !important;
+    animation: shimmer-gift 2s infinite !important;
+}
+
+@keyframes shimmer-gift {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Responsive adjustments for gift notice */
+@media (max-width: 768px) {
+    .gift-notice {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .gift-text {
+        font-size: 0.75rem;
+    }
+}
+
+/* Platform Investment Notice Styles */
+.platform-investment-notice {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.investment-notice-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #2C2C2C;
+    color: #CCCCCC;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #404040;
+}
+
+.notice-icon {
+    font-size: 1rem;
+}
+
+.notice-text {
+    font-size: 0.8rem;
+    letter-spacing: 0.3px;
+    line-height: 1.3;
+}
+
+
+/* Responsive adjustments for investment notice */
+@media (max-width: 768px) {
+    .investment-notice-badge {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.75rem;
+    }
+    
+    .notice-text {
+        font-size: 0.7rem;
+    }
 }
 
 /* Process Section */
