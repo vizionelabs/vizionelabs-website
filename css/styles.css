@@ -1062,6 +1062,7 @@ section {
         padding: 1rem !important;
         margin: 1rem 0 !important;
         border-radius: 12px !important;
+        overflow: visible !important; /* Ensure content is not cut off */
     }
     
     .discount-tag {
@@ -1076,7 +1077,37 @@ section {
     }
     
     .price-new {
-        font-size: 1.8rem !important;
+        font-size: 1.6rem !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+    
+    .price-new .price-unit {
+        font-size: 0.45em !important;
+        white-space: nowrap !important;
+        display: inline-block !important;
+    }
+    
+    .asterisk-note {
+        font-size: 0.7em !important;
+        margin-left: 1px !important;
+    }
+    
+    .promotion-details {
+        margin-top: 0.8rem !important;
+    }
+    
+    .promotion-details p {
+        font-size: 0.8rem !important;
+        margin: 0.2rem 0 !important;
+        line-height: 1.3 !important;
+    }
+    
+    .promotion-note {
+        font-size: 0.7rem !important;
+        padding: 0.3rem 0.6rem !important;
+        margin-top: 0.4rem !important;
     }
     
     .service-detail-title {
@@ -1106,23 +1137,28 @@ section {
     .package-service-item {
         flex-direction: column;
         text-align: center;
-        gap: 0.5rem;
+        gap: 0.4rem;
         padding: 0.8rem;
     }
     
     .service-name {
         font-size: 0.9rem;
-        color: #CCCCCC;
+        color: #FFFFFF;
+        font-weight: 600;
+        line-height: 1.3;
+        text-align: center;
     }
     
     .service-price {
         font-size: 1rem;
-        color: #CCCCCC;
+        color: #FF6B35;
         font-weight: 700;
+        margin-top: 0.2rem;
+        text-align: center;
     }
     
     .package-total-label {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 }
 
@@ -1142,6 +1178,7 @@ section {
         padding: 0.8rem !important;
         margin: 0.8rem 0 !important;
         border-radius: 8px !important;
+        overflow: visible !important; /* Ensure content is not cut off */
     }
     
     .discount-tag {
@@ -1156,7 +1193,38 @@ section {
     }
     
     .price-new {
-        font-size: 1.5rem !important;
+        font-size: 1.4rem !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+        line-height: 1.2 !important;
+    }
+    
+    .price-new .price-unit {
+        font-size: 0.4em !important;
+        white-space: nowrap !important;
+        display: inline-block !important;
+    }
+    
+    .asterisk-note {
+        font-size: 0.6em !important;
+        margin-left: 1px !important;
+    }
+    
+    .promotion-details {
+        margin-top: 0.6rem !important;
+    }
+    
+    .promotion-details p {
+        font-size: 0.75rem !important;
+        margin: 0.15rem 0 !important;
+        line-height: 1.2 !important;
+    }
+    
+    .promotion-note {
+        font-size: 0.65rem !important;
+        padding: 0.25rem 0.5rem !important;
+        margin-top: 0.3rem !important;
     }
     
     .service-detail-title {
@@ -1200,17 +1268,22 @@ section {
     
     .service-name {
         font-size: 0.8rem;
-        color: #CCCCCC;
+        color: #FFFFFF;
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: center;
     }
     
     .service-price {
         font-size: 0.9rem;
-        color: #CCCCCC;
+        color: #FF6B35;
         font-weight: 700;
+        margin-top: 0.2rem;
+        text-align: center;
     }
     
     .package-total-label {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
     }
 }
 
@@ -1511,7 +1584,7 @@ section {
 }
 
 .price-new {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 800;
     font-family: 'Montserrat', sans-serif;
     color: #FF6B35; /* Orange color like buttons */
@@ -1528,7 +1601,7 @@ section {
 
 /* Small text for price units like "mês", "pacote", "projeto" */
 .price-new .price-unit {
-    font-size: 0.6em;
+    font-size: 0.5em;
     font-weight: 500;
     vertical-align: baseline;
     color: #FF6B35; /* Keep orange color */
@@ -1539,6 +1612,8 @@ section {
     text-shadow: 
         0 2px 4px rgba(255, 107, 53, 0.3),
         0 1px 2px rgba(0, 0, 0, 0.1);
+    white-space: nowrap; /* Prevent text wrapping */
+    display: inline-block; /* Ensure proper spacing */
 }
 
 /* Price continuation - for values after promotional period */
@@ -1556,6 +1631,51 @@ section {
     margin-top: 0.5rem;
     text-align: center;
     position: relative;
+}
+
+/* Asterisk note styling */
+.asterisk-note {
+    color: #FF6B35;
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-left: 2px;
+    vertical-align: super;
+    text-shadow: 0 1px 2px rgba(255, 107, 53, 0.3);
+}
+
+/* Promotion details styling */
+.promotion-details {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.promotion-details p {
+    color: #CCCCCC;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0.3rem 0;
+    line-height: 1.4;
+}
+
+.promotion-details .asterisk-note {
+    color: #FF6B35;
+    font-weight: 700;
+    margin-right: 3px;
+}
+
+/* Promotion note styling for individual cards */
+.promotion-note {
+    color: #FF6B35;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    text-align: center;
+    background: rgba(255, 107, 53, 0.1);
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 107, 53, 0.3);
+    display: inline-block;
+    white-space: nowrap;
 }
 
 /* Smaller price size for non-featured cards */
@@ -1594,13 +1714,15 @@ section {
 
 .package-service-item {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+    gap: 0.5rem;
 }
 
 .package-service-item:hover {
@@ -1610,20 +1732,25 @@ section {
 }
 
 .service-name {
-    color: #CCCCCC;
-    font-weight: 500;
+    color: #FFFFFF;
+    font-weight: 600;
     font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+    text-align: center;
 }
 
 .service-price {
-    color: #CCCCCC;
+    color: #FF6B35;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 0.3rem;
 }
 
 .package-total-label {
     color: #CCCCCC;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 500;
     margin-top: 0.5rem;
     text-transform: uppercase;
@@ -1704,7 +1831,7 @@ section {
 
 .price-new {
     color: #FF6B35;
-    font-size: 3rem;
+    font-size: 2.2rem;
     font-weight: 900;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     margin-bottom: 1rem;
